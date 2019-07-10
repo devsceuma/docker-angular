@@ -1,10 +1,6 @@
-FROM node:10.9-slim as node
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
-WORKDIR /app
-
-COPY package.json /app/
+# build environment
+FROM node:10.9-slim
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+ENV PATH /usr/src/app/node_modules/.bin:$PATH
 RUN npm install -g @angular/cli@7.0.2
-RUN npm install
-COPY ./ /app/
-ARG env=prod
-RUN npm run build
