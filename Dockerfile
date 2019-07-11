@@ -1,6 +1,6 @@
 # build environment
 FROM node:10-alpine as node
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+ENV PATH /app/node_modules/.bin:$PATH
 RUN mkdir /app
 WORKDIR /app
 RUN npm install -g @angular/cli@7.0.2
