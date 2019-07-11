@@ -7,3 +7,4 @@ RUN npm install -g @angular/cli@7.0.2
 
 FROM nginx:1.13
 COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
